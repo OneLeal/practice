@@ -4,5 +4,5 @@
  */
 
 const hasProp = function (data, prop) {
-  // to do
+
 };
