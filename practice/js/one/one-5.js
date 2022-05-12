@@ -6,3 +6,7 @@
 const getTimeList = function (start, end, step) {
   // to do
 };
+
+console.log(getTimeList("09:00", "13:05", 15));
+console.log(getTimeList("08:50", "11:48", 15));
+console.log(getTimeList("00:00", "23:59", 30));
