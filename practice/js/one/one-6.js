@@ -5,17 +5,5 @@
  */
 
 const ballInfo = function (height, count) {
-  let distance = 0;
-  for (let i = 1; i <= count; i++) {
-    const half = (height / 2).toFixed(2);
-    distance = distance + +height + +half;
-    height = +half;
-  }
-  distance = +distance.toFixed(2);
-  return { distance, height };
+  //  to do
 };
-
-const height = 100;
-const count = 4;
-const result = ballInfo(height, count);
-console.log("result: ", result);
