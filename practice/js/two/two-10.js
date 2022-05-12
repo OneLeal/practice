@@ -18,4 +18,4 @@ let obj = {
   height: 162,
   width: 888,
 };
-console.log(hasProp(obj, 'height'));
+// console.log(hasProp(obj, 'height'));
