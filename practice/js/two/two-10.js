@@ -19,3 +19,10 @@ let obj = {
   width: 888,
 };
 // console.log(hasProp(obj, 'height'));
+
+/**
+ * 批注:
+ * 老婆真 too simple to naive;
+ * 这么简单要啥循环，直接 obj[key] 不就出来了;
+ * 要考虑深度对象
+ */
