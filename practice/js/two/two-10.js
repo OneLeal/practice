@@ -4,21 +4,34 @@
  */
 
 const hasProp = function (data, prop) {
-  let result = {};
-  if (data.hasOwnProperty(prop)) {
-    for (const i in data) {
-      if (prop == i) result[i] = data[i];
+ let result = {}
+  for (let i in data) {
+    if (i==prop) {
+       result[i] = data[prop];
+       return result;
+       break;
     }
-    return result;
-  } else return null;
+     if (typeof data[i] === 'object') {
+        return hasProp(data[i], prop);
+     }
+   }
+   return null
 };
 let obj = {
   name: 'feifei',
   age: 23,
+  color: {
+    a: 'red',
+     b: {
+        lesson: {
+           css: 11,
+           js:88
+       }
+    },
+  },
   height: 162,
-  width: 888,
 };
-// console.log(hasProp(obj, 'height'));
+console.log(hasProp(obj, 'cssss'));
 
 /**
  * 批注:

@@ -9,5 +9,13 @@
 
 const url = "www.baidu.com?user=Jonh&age=25&phone=13332905448&job=engineer";
 const fetchSearchParams = function (url) {
-  // to do
+   let result = url.split('?')[1]
+   let strArr = result.split('&');
+   let resultArr = {}
+   strArr.forEach(item => {
+   let [key, value] = item.split('=')
+    resultArr[key] = value
+   })
+   return resultArr
 };
+console.log(fetchSearchParams(url));
