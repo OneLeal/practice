@@ -16,5 +16,16 @@
  */
 
 const palindrome = function (str) {
-  // to do
+  if (!str || typeof str !== "string") return false;
+
+  let bool = true;
+  for (let i = 0, j = str.length - 1; i < j; i++, j--) {
+    bool = str[i] === str[j];
+    if (!bool) break;
+  }
+  return bool;
 };
+
+["===336633===", "beauty", "399x993", "1234331", ""].forEach((str) =>
+  console.log(palindrome(str))
+);
