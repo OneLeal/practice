@@ -9,7 +9,7 @@ const hasProp = function (data, prop) {
     if (i==prop) {
        result[i] = data[prop];
        return result;
-       break;
+    //    break;
     }
      if (typeof data[i] === 'object') {
         return hasProp(data[i], prop);
@@ -20,6 +20,7 @@ const hasProp = function (data, prop) {
 let obj = {
   name: 'feifei',
   age: 23,
+  let:['1','2'],
   color: {
     a: 'red',
      b: {
@@ -31,7 +32,7 @@ let obj = {
   },
   height: 162,
 };
-console.log(hasProp(obj, 'cssss'));
+console.log(hasProp(obj, 'a'));
 
 /**
  * 批注:
