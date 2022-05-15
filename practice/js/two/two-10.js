@@ -4,5 +4,26 @@
  */
 
 const hasProp = function (data, prop) {
-  // to do
+  let key = null;
+
+  for (let keyName in data) {
+    if (key) break;
+
+    if (prop === keyName) {
+      key = { [keyName]: data[keyName] };
+      break;
+    }
+
+    data[keyName] instanceof Object && (key = hasProp(data[keyName], prop));
+  }
+
+  return key;
 };
+
+const data = {
+  name: "xxx",
+  arr: [1, [33, "iron", { a: [{ leaf: 15 }] }], { sum: 120 }],
+  info: { age: 24, message: { list: [{}, { lesson: "asd" }] } },
+};
+
+console.log(hasProp(data, "sum"));

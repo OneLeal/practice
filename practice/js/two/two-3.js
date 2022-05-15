@@ -7,7 +7,15 @@
  * 输出: 2
  */
 
-const arr = [2, 3, 6, 3, 6, 1, 1];
+const arr = [2, 3, 6, 3, 6, 2, 1, 2, 1, 2, 5];
 const findSingleNum = function (arr) {
-  // to do
+  const data = {};
+  let number = null;
+  arr.forEach((num) => (data[num] ? data[num]++ : (data[num] = 1)));
+  for (let key in data) {
+    data[key] % 2 === 1 && (number = key);
+  }
+  return number;
 };
+
+console.log(findSingleNum(arr));
