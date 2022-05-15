@@ -9,9 +9,17 @@
  */
 
 const reverseWords = function (str) {
-  // to do
+  return str.split("").reverse().join("");
 };
 
 const reverseWordsHard = function (str) {
-  // to do
+  let result = "";
+  for (let i = 0, j = str.length - 1; i < str.length; i++, j--) {
+    result += str[j];
+  }
+  return result;
 };
+
+const str = "Let's take LeetCode contest";
+console.log(reverseWords(str));
+console.log(reverseWordsHard(str));

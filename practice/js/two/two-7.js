@@ -9,7 +9,7 @@
 
 const url = "www.baidu.com?user=Jonh&age=25&phone=13332905448&job=engineer";
 const fetchSearchParams = function (url) {
-  if (!url || typeof url !== "string") return {};
+  if (typeof url !== "string" || !url) return {};
 
   const data = {};
   const params = url.split("?")[1];
