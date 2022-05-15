@@ -8,16 +8,10 @@
  */
 
 const delAllChar = function (str, char) {
-   let strArr = str.split(' ')
-   let result = []
-   for (let i = 0; i < strArr.length; i++) {
-    let a = strArr[i].split('').filter(item => {
-        return item != char;
-    })
-      result.push(a.join(''));
-   }
-   return result.join(' ').trim();
+    return str.split('').filter(item =>item != char).join(' ')
+   
 
-};
+}
 
-console.log(delAllChar('n nI ate noodles in the afternoon. n', 'n'));
+
+console.log(delAllChar('afternoon.', 'n'));
