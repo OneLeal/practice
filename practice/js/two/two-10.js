@@ -4,38 +4,36 @@
  */
 
 const hasProp = function (data, prop) {
- let result = {}
+  let result = {};
+
   for (let i in data) {
-    if (i==prop) {
-       result[i] = data[prop];
-       return result;
-       break;
+    if (Object.keys(result).length) break;
+
+    if (i == prop) {
+      result[i] = data[prop];
+      break;
     }
-     if (typeof data[i] === 'object') {
-        return hasProp(data[i], prop);
-     }
-   }
-   return null
+
+    if (data[i] instanceof Object) {
+      result = hasProp(data[i], prop) || {};
+    }
+  }
+
+  return Object.keys(result).length ? result : null;
 };
 let obj = {
-  name: 'feifei',
+  name: "feifei",
   age: 23,
   color: {
-    a: 'red',
-     b: {
-        lesson: {
-           css: 11,
-           js:88
-       }
+    a: "red",
+    list: [15, { c: "Chinese" }],
+    b: {
+      lesson: {
+        css: 11,
+        js: 88,
+      },
     },
   },
   height: 162,
 };
-console.log(hasProp(obj, 'cssss'));
-
-/**
- * 批注:
- * 老婆真 too simple to naive;
- * 这么简单要啥循环，直接 obj[key] 不就出来了;
- * 要考虑深度对象
- */
+console.log(hasProp(obj, "lesson"));
