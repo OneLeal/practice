@@ -24,6 +24,7 @@ const hasProp = function (data, prop) {
 let obj = {
   name: "feifei",
   age: 23,
+  let:['1','2'],
   color: {
     a: "red",
     list: [15, { c: "Chinese" }],
